@@ -4,7 +4,8 @@
 # include "ArduinoJson.h"
 
 AsyncWebServer server(80);
-
+unsigned long stopwatchStart=0;
+bool restartESP = false;
 
 //###################################################################
 //Declaração de funções
@@ -22,14 +23,19 @@ void setup(){
     Serial.begin(9600);
     initFS();   
 
-    modeStation(); 
+    if(!modeStation())  modeAccessPoint();
 }
 
 
 //###################################################################
 
 void loop(){
-
+    if(restartESP){
+        if(millis()>stopwatchStart+5000){
+            Serial.println(F(("Reiniciando")));
+            ESP.restart();
+        }
+    }
 }
 
 //###################################################################
@@ -85,6 +91,9 @@ void fileWrite(const char* path, const char* content){
 
 //###################################################################
 
+/// @brief realizar as configurações necessárias no ESP para funcionar em modo STATION.
+/// @retval \c TRUE, caso consigar entrar em modo Station;
+/// @retval \c FALSE, caso contrário.
 bool modeStation(){
     StaticJsonBuffer<200> jsonBuffer;
     String json = fileRead("/network_settings.json");
@@ -117,17 +126,35 @@ bool modeStation(){
     }
 
     if(WiFi.status() != WL_CONNECTED){
-        Serial.println("\nfalha ao logar em \""+WiFi.SSID()+"\"");
+        Serial.println("\nfalha ao logar na rede WiFi: \""+WiFi.SSID()+"\"");
+        Serial.println(F("Senha ou rede incorretos"));
         return false;
     }
 
     Serial.println("\nREDE: "+WiFi.SSID());
-    Serial.println("IP: "+WiFi.localIP().toString());
+    Serial.println("acesse o IP: "+WiFi.localIP().toString());
     return true;
 }
 
 //###################################################################
 
+/// @brief configura o ESP em modo Access Point.
 void modeAccessPoint(){
+    IPAddress ip(192,168,4,1);
+    IPAddress gateway(192,168,4,1);
+    IPAddress subnet(255,255,255,0);
 
+    WiFi.mode(WIFI_AP_STA);
+    WiFi.softAPConfig(ip, gateway, subnet);
+
+    if(!WiFi.softAP("Water-Dispenser", NULL)){
+        Serial.println(F("Falha ao entrar em Modo Access Point"));
+        restartESP = true;
+        stopwatchStart = millis();
+        return;
+    }
+
+    Serial.println(F("\nModo Access Point"));
+    Serial.println("login na rede: "+WiFi.softAPSSID());
+    Serial.println("acesse IP: "+WiFi.softAPIP().toString());
 }
