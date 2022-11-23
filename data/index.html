@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <script src="navbar.js"></script>
+    <title>Water Dispenser</title>
+</head>
+<body onload="onload()">
+    <header>
+        <nav class="nav-bar">
+            <div class="menu-mobile-icon">
+                <button onclick="menuShow()" > <img class="icon-menu" src="menu.png"></button>
+            </div>
+            <div class="logo">
+                <a href="index.html">Water Dispenser</a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a class="nav-link" href="#">Garrafas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="network_settings.html">Configurações</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="menu-mobile">
+            <ul>
+                <li class="nav-item"><a  class="nav-link" href="#">Garrafas</a></li>
+                <li class="underline"></li>
+                <li class="nav-item"><a  class="nav-link" href="network_settings.html">Configurações</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="column">
+            <h1>Garrafas:</h1>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

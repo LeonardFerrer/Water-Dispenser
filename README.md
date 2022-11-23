@@ -29,3 +29,4 @@ Um dispensador de água também conhecido como bebouro, funciona com uma bomba p
 [XMLHttpRequest: readyState](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState)
 [esp8266 nodemcu vs-code platformio littlefs](https://randomnerdtutorials.com/esp8266-nodemcu-vs-code-platformio-littlefs/)
 [Decodificando e Codificando JSON com Arduino ou ESP8266](https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/)
+[esp8266-web-server](https://randomnerdtutorials.com/esp8266-web-server/)

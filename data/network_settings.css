@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background:  #dee2e6;
+}
+
+main .card-setting{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+form {
+    background: white;
+    padding: 2rem;
+    position: absolute;
+    width: 450px;
+    top: 50%;
+    margin-top: -150px;
+    border-radius: 1rem;
+    box-shadow: 3px 5px 5px rgb(20, 20, 20);
+}
+
+form label{
+    font-size: 28px;
+}
+
+form div{
+    position: relative;
+    padding: 8px;
+}
+
+.fieldInput{
+    position: absolute;
+    right: 0;
+    font-size: 22px;
+    width: 220px;
+    text-align: center;
+}
+
+
+form .field-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form  .button-submit{
+    background: green;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    width: 11rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 3px 5px 5px rgb(182, 181, 181);
+}
+
+
+@media screen and (max-width:730px){
+    form {
+        padding: 1rem;
+        width: 350px;
+        margin-top: 5rem;
+        top: 0;
+    }
+    
+    form label{
+        font-size: 20px;
+        width: 100px;
+    }
+    
+    .fieldInput{
+        font-size: 22px;
+        padding: 2px;
+        width: 220px;
+    }
+}

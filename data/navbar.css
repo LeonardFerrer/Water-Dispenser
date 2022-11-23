@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* body{
+    display: flex;
+    flex-direction: column;
+} */
+
+header{
+    background: #023047;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo a{
+    color: aliceblue;
+    font-size: 4rem;
+    text-decoration: none;
+}
+
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item{
+    margin: 0 1.8rem;
+    text-align: left;
+}
+
+.nav-link{
+    font-size: 2rem;
+    text-decoration: none;
+    color: aliceblue;
+    justify-content: left;
+}
+
+.menu-mobile-icon{
+    display: none;  /* Deixar todo o componentes invisivel */
+}
+
+/* Configura a imagem em relaçaõ a seu tamanho */
+.menu-mobile-icon img{
+    width: 2rem;
+    height:1.5rem;
+}
+
+.menu-mobile-icon button{
+    background-color: transparent; /* Define um funo transparente */
+    border: none;   /* Remove a borda do botao */
+    cursor: pointer;
+}
+
+.menu-mobile{
+    display: none;
+    position: relative;
+}
+
+.menu-mobile .underline::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 90%;
+    left: 50%;
+    margin-left: -45%;
+    background: #464646;
+}
+
+
+
+/* Define o css quando o dipositivo tiver umas visualização menor que 370px */
+@media screen and (max-width:730px){
+    .logo a{
+        font-size: 2.5rem;
+    }
+    .menu-mobile-icon{
+        display: flex;
+    }
+    .nav-list{
+        display: none;
+    }
+    .menu-mobile ul{
+        font-size: 3rem;
+        text-align: right;
+        background: #011b28;
+        /* background: red; */
+        cursor: pointer;
+        list-style: none;
+    }
+    .menu-mobile .nav-item{
+        position: relative;
+        padding-left: 0.8rem;
+        height: 55px;
+    }
+
+    .menu-mobile .nav-item .nav-link{
+        position: absolute;
+        height: 38px;
+        top: 50%;
+        margin-top: -19px;
+        font-size: 2rem;
+    }
+
+    .open{
+        display: flex;
+        flex-direction: column;
+    }
+}
