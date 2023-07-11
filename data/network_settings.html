@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="network_settings.css">
     <link rel="stylesheet" href="navbar.css">
     <script src="navbar.js"></script>
+    <script src="network_settings.js"></script>
     <title>Water Dispenser</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
             </div>
             <div class="nav-list">
                 <ul>
-                    <li class="nav-item"><a class="nav-link" href="#">Garrafas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Garrafas</a></li>
                     <li class="nav-item"><a class="nav-link" href="network_settings.html">Configurações</a></li>
                 </ul>
             </div>
@@ -39,12 +40,13 @@
             <!-- <form action="/network_settings.html" method="post"> -->
             <form action="/network_settings.html" method="post">
                 <div>
-                    <label for="ssid">SSID: </label>
+                    <label for="ssid">Rede: </label>
                     <input class="fieldInput" type="text" name="ssid" id="ssid" />
                 </div>
                 <div>
                     <label for="password">Password: </label>
-                    <input class="fieldInput" type="text" name="password" id="password" />
+                    <input class="fieldInput" type="password" name="password" id="password" />
+                    <button id="showPasswordBtn" type="button" onclick="togglePasswordVisibility()">...</button>
                 </div>
                 <div>
                     <label for="ip">IP Address: </label>
@@ -65,6 +67,6 @@
         </div>
     </main>
 
-
+    
 </body>
 </html>

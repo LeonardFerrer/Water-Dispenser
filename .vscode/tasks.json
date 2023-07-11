@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: xtensa-lx106-elf-gcc.exe arquivo de build ativo",
+            "command": "C:/Users/Leonardo/.platformio/packages/toolchain-xtensa/bin/xtensa-lx106-elf-gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-mlongcalls",
+                "-mtext-section-literals",
+                ""
+            ],
+            "options": {
+                "cwd": "C:/Users/Leonardo/.platformio/packages/toolchain-xtensa/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Tarefa gerada pelo Depurador."
+        }
+    ],
+    "version": "2.0.0"
+}

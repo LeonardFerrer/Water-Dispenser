@@ -1,0 +1,73 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "WebSocket Server",
+			"path": "../../WebSocket Server"
+		},
+		{
+			"name": "Water Dispenser 2",
+			"path": "../../Water Dispenser 2"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"atomic": "cpp",
+			"*.tcc": "cpp",
+			"bitset": "cpp",
+			"vector": "cpp",
+			"exception": "cpp",
+			"memory_resource": "cpp",
+			"random": "cpp",
+			"algorithm": "cpp",
+			"functional": "cpp",
+			"iosfwd": "cpp",
+			"istream": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"ostream": "cpp",
+			"streambuf": "cpp",
+			"system_error": "cpp",
+			"regex": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"typeinfo": "cpp",
+			"array": "cpp",
+			"bit": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cstring": "cpp",
+			"ctime": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"list": "cpp",
+			"map": "cpp",
+			"set": "cpp",
+			"unordered_map": "cpp",
+			"iterator": "cpp",
+			"memory": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"utility": "cpp",
+			"initializer_list": "cpp",
+			"ranges": "cpp",
+			"sstream": "cpp",
+			"stdexcept": "cpp",
+			"cinttypes": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "Water Dispenser WiFi"
+	}
+}

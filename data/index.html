@@ -8,7 +8,8 @@
     <script src="navbar.js"></script>
     <title>Water Dispenser</title>
 </head>
-<body onload="onload()">
+<!-- <body onload="onload()"> -->
+<body>
     <header>
         <nav class="nav-bar">
             <div class="menu-mobile-icon">
@@ -33,10 +34,122 @@
         </div>
     </header>
     <main>
-        <div class="column">
-            <h1>Garrafas:</h1>
+        <div class="container">
+            <div class="cards-hearder">
+                <h1>Garrafas:</h1>
+                <button id="editar" class="btn-editar" onclick="editar()">
+                    <img src="editar.png" alt="">
+                </button>
+                <button id="btn-add" class="btn-add" onclick="addBotte()">
+                    <img src="add.png" alt="">
+                </button>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <button id="continuo" class="card-botte" onclick="onBotteContinuous()">
+                        <div id="name" class="nameBotte">
+                            <h2>continuo</h2>
+                        </div>
+                        <div id="volume" class="volumeBotte">
+                            <h2>(...)</h2>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <footer id="footer-form">
+                <button class="btn-cancelar" id="btn-ancelarEdite" onclick="cancelar()">
+                    cancelar
+                </button>
+                <button class="btn-salvar" id="btn-salvarEdite" onclick="salvar()">
+                    salvar
+                </button>
+            </footer>
+        </div>
+
+        <div id="dv-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="titulo-modal">Nova Garrafa</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-botte">
+                        <form action="#" autocomplete="off">
+                            <div class="form-row">
+                                <label for="inputNome">Nome: </label>
+                                <input type="text" id="inputNome" name="inputNome">
+                            </div>
+                            <div class="form-row">
+                                <label for="inputVolume">Volume:</label>
+                                <input type="number" id="inputVolume" name="inputVolume">
+                                <button id="btnMedirVolume" class="btn-medir" type="button" onclick="abrirModalMedirVolume()">medir</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-close" class="btn-cancelar" onclick="modalCancelar()" >cancelar</button>
+                    <button id="btn-salvar" class="btn-salvar" onclick="modalAdicionar()">adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dv-modal-medir-volume" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="titulo-modal-medir-volume">Medir Volume</h1>
+                </div>
+                <div class="modal-body">
+                    <p>Certifique-se de que há uma garrafa para ser medida, pois a bomba será acionada afim de calcular o quanto de água é necessário para encher completamente o recipiente.</p>
+                    <p>Assim que a garrafa estiver completamente cheia, aperte no botão "Concluir" para salvar o volume necessário para encher a garrafa.</p>
+                </div>
+                <div class="modal-body">
+                    <div class="loader-body">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-concluir" class="btn-concluir" onclick="concluirMedicao()">Concluir</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dv-onbotte" class="modal"> 
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="onBotte-name"></h1>
+                    <h2>Enchendo...</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="loader-body">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="onBotte-cancelar" class="btn-cancelar" onclick="offBotte()">cancelar</button>
+                    <span id="onBotte-aguarde">Por favor aguarde, a conclusão</span>
+                </div>
+            </div>
+
         </div>
     </main>
+
     <script src="index.js"></script>
 </body>
 </html>
+
+ <!-- 
+<div class="card">
+    <button class="botte" name="botte">
+        <div id="name" class="nameBotte">
+            <h2>botte</h2>
+        </div>
+        <div id="volume" class="volumeBotte">
+            <h2>2.0</h2>
+            <h2>L</h2>
+        </div>
+    </button>
+    <button class="button-close">
+        <h2>X</h2>
+    </button>
+</div>
+-->

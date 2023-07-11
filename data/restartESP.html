@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Water Dispenser</title>
+
+    <style>
+        .link {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Reiniciando o Water Dispenser:</h1>
+    <h1 id="counter">15</h1>
+    <div class="link"  id="link">
+        <a href={COUNTER_VALUE}>Acesse o Water Dispenser</a>
+    </div>
+
+    <script>
+        function updateCounter() {
+            var counterElement = document.getElementById("counter");
+            var counterValue = parseInt(counterElement.innerHTML);
+            if (counterValue <= 0) {
+                var link = document.getElementById('link');
+                link.style.display = 'block'; 
+                clearInterval(timer); 
+                return;
+            }
+
+            counterValue--; 
+            counterElement.innerHTML = counterValue; 
+        }
+
+        // Inicia a contagem regressiva quando a página é carregada
+        window.onload = function() {
+            var timer = setInterval(updateCounter, 1000); // Chama a função a cada segundo (1000ms)
+        };
+    </script>
+</body>
+</html>
